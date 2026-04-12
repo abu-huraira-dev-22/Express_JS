@@ -1,4 +1,6 @@
-const express = require("express");
+// const express = require("express");
+import express from 'express'
+// const { title } = require("node:process");
 // const { title } = require("node:process");
 const app = express();
 
@@ -22,6 +24,18 @@ app.get("/jobs", (req, res) => {
   });
 });
 
-app.listen(500, (req, res) => {
+
+// app.post('/',(req,res)=>{
+//   res.json({
+//     status:true,
+//     data:[{
+//       message:'User Signed up Successfully'
+//     }]
+//   })
+// })
+app.listen(5000, (req, res) => {
   console.log("Server is running");
 });
+
+
+
