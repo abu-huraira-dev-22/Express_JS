@@ -18,6 +18,28 @@ app.post('/users',(req,res)=>{
     })
 })
 
+app.put('/users',(req,res)=>{
+    res.json({
+        status:true,
+        message: "User Updated Successfully"
+    })
+})
+
+app.patch('/users',(req,res)=>{
+    res.json({
+        status:true,
+        message: "User Field updated Successfully"
+    })
+})
+
+app.delete('/users',(req,res)=>{
+    res.json({
+        status:true,
+        message: "User Deleted Successfully"
+    })
+})
+
+
 app.listen(2000,()=>[
     console.log('Server is running')
 ])
