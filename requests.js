@@ -10,6 +10,16 @@ app.get("/users", (req, res) => {
     data: users,
   });
 });
+
+app.get('/users/:username',(req,res)=>{
+
+  const {username} = req.params
+  res.json({
+    status:true,
+    message: 'Single User Data',
+    data: users.filter((user)=>user.username==username)
+  })
+})
 app.post("/users", (req, res) => {
   const data = req.body;
   users.push(data);
