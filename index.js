@@ -4,6 +4,12 @@ import express from 'express'
 // const { title } = require("node:process");
 // const { title } = require("node:process");
 const app = express();
+app.use(express.json())
+
+app.use((req,res,next)=>{
+  req.requestTime = new Date()
+  next()
+})
 
 app.get("/", (req, res) => {
   res.send("Welcome to my website");
@@ -22,6 +28,7 @@ app.get("/jobs", (req, res) => {
         salary: 150000,
       },
     ],
+    time:req.requestTime
   });
 });
 
