@@ -1,10 +1,14 @@
 
 // const express = require("express");
 import express from 'express'
+import morgan from 'morgan';
 // const { title } = require("node:process");
 // const { title } = require("node:process");
 const app = express();
+
 app.use(express.json())
+
+app.use(morgan('tiny'))
 
 app.use((req,res,next)=>{
   req.requestTime = new Date()
